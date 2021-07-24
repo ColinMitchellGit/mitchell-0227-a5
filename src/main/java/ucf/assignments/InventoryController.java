@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 5 Solution
+ *  Copyright 2021 Colin Mitchell
+ */
+
 package ucf.assignments;
 
 import javafx.collections.FXCollections;
@@ -49,17 +54,12 @@ public class InventoryController {
 
     @FXML
     void exportInventoryItems(ActionEvent event) {
-        //Create file writer
-        //Convert items to json objects
-        //Write json objects to json file
+        switchSceneExport(event);
     }
 
     @FXML
     void loadInventoryItems(ActionEvent event) {
-        //Create file reader
-        //Convert JSON to ArrayList containing all inventory items
-        //Add all items in the ArrayList to the main ObservableList of inventory items
-        //Close file reader
+        switchSceneLoad(event);
     }
 
     @FXML
@@ -96,6 +96,7 @@ public class InventoryController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("InventoryNew.fxml"));
             Parent root = loader.load();
 
+            //Pass the list of inventory items
             InventoryNewController controller = loader.getController();
             controller.passMainList(mainList);
 
@@ -118,6 +119,7 @@ public class InventoryController {
 
             InventoryViewController controller = loader.getController();
 
+            //Pass the list of inventory items and the selected item's index
             controller.passMainList(mainList);
             controller.setSelectedListIndex(index);
             controller.display();
@@ -128,6 +130,49 @@ public class InventoryController {
             //Switch scene to provided fxml scene file
             stage.setScene(switcher);
             stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void switchSceneExport(ActionEvent event) {
+        try {
+            //Load provided FXML scene file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("InventoryExport.fxml"));
+            Parent root = loader.load();
+
+            //Pass the list of inventory items
+            InventoryExportController controller = loader.getController();
+            controller.passMainList(mainList);
+
+            Scene switcher = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            //Switch scene to provided fxml scene file
+            stage.setScene(switcher);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void switchSceneLoad(ActionEvent event) {
+        try {
+            //Load provided FXML scene file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("InventoryLoad.fxml"));
+            Parent root = loader.load();
+
+            //Pass the list of inventory items
+            InventoryLoadController controller = loader.getController();
+            controller.passMainList(mainList);
+
+            Scene switcher = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            //Switch scene to provided fxml scene file
+            stage.setScene(switcher);
+            stage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,5 +1,12 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 5 Solution
+ *  Copyright 2021 Colin Mitchell
+ */
+
 package ucf.assignments;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -31,6 +38,12 @@ public class InventoryViewController {
 
     @FXML
     private Text errorText;
+
+    @FXML
+    public void initialize() {
+        //Adding a listener to the name text field to limit the input length to 256 characters
+        limitDescription(viewNameField);
+    }
 
     @FXML
     void goBackToMain(ActionEvent event) {
@@ -92,6 +105,19 @@ public class InventoryViewController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    //Limit the length of the name text field to 256 characters
+    public static void limitDescription(final TextField text) {
+        text.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(final ObservableValue<? extends String> ov, final String oldValue, final String newValue) {
+                if (text.getText().length() > 256) {
+                    String s = text.getText().substring(0, 256);
+                    text.setText(s);
+                }
+            }
+        });
     }
 
     //Pass main list of inventory items through each scene

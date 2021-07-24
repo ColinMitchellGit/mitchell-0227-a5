@@ -1,0 +1,116 @@
+@startuml
+
+class InventoryMain {
+    + main()
+    + start()
+}
+
+class InventoryController {
+    - mainLists
+    - stage
+    - inventoryTableView
+    - symbolColumn
+    - valueColumn
+    - serialNumberColumn
+    - nameColumn
+    + initialize()
+    + exportInventoryItems()
+    + loadInventoryItems()
+    + openNewItem()
+    + removeSelectedItem()
+    + viewSelectedItem()
+    + switchSceneNew()
+    + switchSceneView()
+    + switchSceneExport()
+    + switchSceneLoad()
+    + setPrimaryStage()
+    + passMainList()
+}
+
+class InventoryNewController {
+    - mainList
+    - newValueField
+    - newSerialNumberField
+    - newNameField
+    - errorText
+
+    + initialize()
+    + goBackToMain()
+    + saveNewItem()
+    + switchSceneMain()
+    + limitDescription()
+    + passMainList()
+}
+
+class InventoryViewController {
+    - mainList
+    - SelectedItemIndex
+    - viewValueField
+    - viewSerialNumberField
+    - viewNameField
+    - errorText
+
+    + initialize()
+    + goBackToMain()
+    + saveChanges()
+    + switchSceneMain()
+    + limitDescription()
+    + passMainList()
+    + setSelectedListIndex()
+    + display()
+}
+
+class InventoryExportController {
+    - mainList
+    - fileNameField
+    - fileLocationField
+    - errorText
+    + exportInventory()
+    + goBackToMain()
+    + switchSceneMain()
+    + passMainList()
+}
+
+class InventoryLoadController {
+    - mainList
+    - fileNameField
+    - fileLocationField
+    - errorText
+    + goBackToMain()
+    + loadInventory()
+    + switchSceneMain()
+    + passMainList()
+}
+
+class InventoryItem {
+    - symbol
+    - value
+    - serial
+    - name
+
+    + InventoryItem()
+    + getValue()
+    + setValue()
+    + getSerial()
+    + setSerial()
+    + getName()
+    + setName()
+    + getSymbol()
+}
+
+javafx.InventoryApplication <|-- InventoryMain
+
+InventoryMain -- InventoryController
+
+InventoryController -- InventoryNewController
+InventoryController -- InventoryViewController
+InventoryController -- InventoryExportController
+InventoryController -- InventoryLoadController
+
+InventoryController -- InventoryItem
+InventoryNewController -- InventoryItem
+InventoryViewController -- InventoryItem
+InventoryExportController -- InventoryItem
+InventoryLoadController -- InventoryItem
+
+@enduml
