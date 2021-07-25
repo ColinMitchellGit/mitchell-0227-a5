@@ -25,7 +25,7 @@
             <Font name="Microsoft JhengHei" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="363.0" layoutY="7.0" mnemonicParsing="false" onAction="#loadInventory" prefHeight="31.0" prefWidth="76.0" style="-fx-background-color: GhostWhite; -fx-border-color: lightgray; -fx-cursor: hand;" text="Export">
+      <Button layoutX="363.0" layoutY="7.0" mnemonicParsing="false" onAction="#loadInventory" prefHeight="31.0" prefWidth="76.0" style="-fx-background-color: GhostWhite; -fx-border-color: lightgray; -fx-cursor: hand;" text="Load">
          <font>
             <Font name="Microsoft JhengHei" size="14.0" />
          </font>

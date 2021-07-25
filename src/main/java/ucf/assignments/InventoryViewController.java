@@ -64,7 +64,7 @@ public class InventoryViewController {
             }
 
             //Create a new inventory item if the serial is unique
-            if(unique) {
+            if(unique || mainList.get(SelectedItemIndex).getSerial().equals(viewSerialNumberField.getText())) {
                 //Get value from value field
                 String value = viewValueField.getText();
 
