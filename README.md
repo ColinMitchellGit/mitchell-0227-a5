@@ -1,51 +1,73 @@
-# To-do App Help
+# Inventory App Help
 
 ## General Navigation
 
-### Main To-do Screen
+### Main Inventory Screen
 
 ![Main Screen](/help/mainscreen.png)
 
-1. This button will import all the lists from the the lists.json file if you previously exported your lists.
-2. This button will export all the lists you've created to the file lists.json.
-3. This button will navigate you to the screen where you can add a new to-do list.
-4. This is the table which stores every to-do list you've created.
-5. If you've selected a list from the table, this button will remove that list.
-6. If you've selected a list from the table, this button will navigate you to the view to-do list screen with that list.
+1. This button will navigate you to the load inventory screen.
+2. This button will navigate you to the export inventory screen.
+3. This button will navigate you to the new inventory item screen.
+4. This table displays all of the inventory items you have added or loaded.
+5. If you have selected an inventory item from the table, this button will remove it.
+6. If you have selected an inventory item from the table, this button will navigate you to the view item screen with that item        displayed.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
-### New To-do Screen
+### Inventory New Item Screen
 
 ![New Screen](/help/newscreen.png)
 
-1. This button will cancel making a new to-do list and navigate you back to the main to-do screen.
-2. This button will import the list from the list.json file if you previously exported a list.
-3. This button will use all the information you entered into the fields and create a new to-do list from it. It will then navigate    you back to the main screen.
-4. This is where you will enter a title for the new to-do list.
-5. This is where you will enter a description for an item of the to-do list.
-6. This is where you will select a due date for an item of the to-do list.
-7. This button will take the information entered into the description and due date field and create a new item for the to-do list.    It will then display the new item in the table.
-8. This table displays all the items that you add to the to-do list.
-9. If you have selected an item from the table, this button will remove that item.
+1. This button will cancel making a new inventory item and navigate you back to the main inventory screen.
+2. This will take the information you entered into the value, serial number, and name fields and create a new inventory item. It      will then navigate you back to the main inventory screen.
+3. This is the field in which you enter the value of the new inventory item. The format should be 00.00.
+4. This is the field in which you enter the serial number of the new inventory item. The format of a serial number is XXXXXXXXXX      and there can not be any duplicates.
+5. This is the field in which you enter the name of the new inventory item. The name must be at least 2 characters and less than    257.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
-### View To-do Screen
+### Inventory View Item Screen
 
 ![View Screen](/help/viewscreen.png)
 
-1. This button will navigate you back to the home screen without saving any changes made to the to-do list.
-2. This button will export the current list to the file list.json.
-3. This button will save any changes you've made to the currently selected list. This includes changing the title, adding/removing    items, and setting items as completed.
-4. This displays the title of the list that you select. It also allows you to change the title by entering a new one.
-5. This allows you to enter a description for a new item that you'd like to add to the list you selected.
-6. This allows you to select a due date for a new item that you'd like to add to the list you selected.
-7. This button will take the information entered into the description and due date field and create a new item for the to-do list.    It will then display the new item in the table.
-8. This table will display all the items for the list you selected.
-9. If you've selected an item from the table, this button will remove it.
-10. If you've selected an item from the table, this will mark the item as completed.
-11. Pressing this button once, will sort the items in the table by completed only. Twice will sort them by non-completed only.         Three times will reset the sorting.
+1. This button will navigate you back to the main inventory screen without saving any changes made to the inventory item.
+2. This button will save any changes you've made to the inventory item by editing the fields. The formatting for creating an          inventory item also apply to editing them. This means no duplicate serial numbers, etc.
+3. This is the field which displays the selected inventory item's value. You can also change the item's value by editing it in        this field. The formatting for creating the value also applies to editing it.
+4. This is the field which displays the selected inventory item's serial number. You can also change the item's serial number by      editing it in this field.
+5. This is the field which displays the selected inventory item's name. You can also change the item's name by editing it in this    field.
 
+----------------------------------------------------------------------------------------------------------------------------------
 
-Dedicated to Rey.
+## Exporting and Loading Inventory Items
+
+### Export Inventory Screen
+
+![Export Screen](/help/exportscreen.png)
+
+1. This button will navigate you back to the main inventory screen.
+2. This button will take both the file name and file location information from the fields and attempt to create a json file with the desired location and name. If the fields are blank or the file name is invalid, it will display an error message.
+3. This is the field in which you will enter the desired file name to create the json file.
+4. This is the field in which you will enter the desired path for the file location. 
+
+#### Getting the path for the file location
+
+The easiest way to get the path for the file location is as follows:
+
+1. Go to the desired file location in your file explorer. Let's say the desktop.
+![File Explorer Exampple](/help/fileexplorer.png)
+2. Shift + Right Click the file location and click "Copy as Path".
+3. You can then paste this path into the file location field.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+### Load Inventory Screen
+
+![Load Screen](/help/loadscreen.png)
+
+1. This button will navigate you back to the main inventory screen.
+2. This button will take both the file name and file location information from the fields and attempt to load the inventory items in the desired json file. If the fields are blank or the file name is invalid, it will display an error message.
+3. This is the field in which you will enter the file name of the previously exported json file.
+4. This is the field in which you will enter the path of the previously exported json file. 
+
+The method for easily getting the file path in the previous section also works here.
