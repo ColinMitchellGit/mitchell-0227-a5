@@ -4,7 +4,7 @@
 
 ### Main Inventory Screen
 
-![Main Screen](/help/mainscreen.png)
+![Main Screen](/help/mainscreen.PNG)
 
 1. This button will navigate you to the load inventory screen.
 2. This button will navigate you to the export inventory screen.
@@ -17,7 +17,7 @@
 
 ### Inventory New Item Screen
 
-![New Screen](/help/newscreen.png)
+![New Screen](/help/newscreen.PNG)
 
 1. This button will cancel making a new inventory item and navigate you back to the main inventory screen.
 2. This will take the information you entered into the value, serial number, and name fields and create a new inventory item. It      will then navigate you back to the main inventory screen.
@@ -29,7 +29,7 @@
 
 ### Inventory View Item Screen
 
-![View Screen](/help/viewscreen.png)
+![View Screen](/help/viewscreen.PNG)
 
 1. This button will navigate you back to the main inventory screen without saving any changes made to the inventory item.
 2. This button will save any changes you've made to the inventory item by editing the fields. The formatting for creating an          inventory item also apply to editing them. This means no duplicate serial numbers, etc.
@@ -43,7 +43,7 @@
 
 ### Export Inventory Screen
 
-![Export Screen](/help/exportscreen.png)
+![Export Screen](/help/exportscreen.PNG)
 
 1. This button will navigate you back to the main inventory screen.
 2. This button will take both the file name and file location information from the fields and attempt to create a json file with the desired location and name. If the fields are blank or the file name is invalid, it will display an error message.
@@ -55,7 +55,7 @@
 The easiest way to get the path for the file location is as follows:
 
 1. Go to the desired file location in your file explorer. Let's say the desktop.
-![File Explorer Exampple](/help/fileexplorer.png)
+![File Explorer Exampple](/help/fileexplorer.PNG)
 2. Shift + Right Click the file location and click "Copy as Path".
 3. You can then paste this path into the file location field.
 
@@ -63,7 +63,7 @@ The easiest way to get the path for the file location is as follows:
 
 ### Load Inventory Screen
 
-![Load Screen](/help/loadscreen.png)
+![Load Screen](/help/loadscreen.PNG)
 
 1. This button will navigate you back to the main inventory screen.
 2. This button will take both the file name and file location information from the fields and attempt to load the inventory items in the desired json file. If the fields are blank or the file name is invalid, it will display an error message.
