@@ -55,7 +55,9 @@
 The easiest way to get the path for the file location is as follows:
 
 1. Go to the desired file location in your file explorer. Let's say the desktop.
+
 ![File Explorer Exampple](/help/fileexplorer.PNG)
+
 2. Shift + Right Click the file location and click "Copy as Path".
 3. You can then paste this path into the file location field.
 
